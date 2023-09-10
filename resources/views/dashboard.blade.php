@@ -17,10 +17,12 @@
                 <div>{{$user->name}}</div>
                 <div  class="col-span-2">{{$user->email}}</div>
                 <div><span class = "md:hidden">電話：</span>{{$user->phone}}</div>
-                <div>
-                    <a href = "#">更新</a>
-                    <a href = "#">刪除</a>
-                </div>
+                @if(Auth::user() && Auth::user()->role == "admin")             
+                    <div>
+                        <a href = "#" class = "bg-red-500 px-2 py-1 rounded-sm text-neutral-50 hover:opacity-90 active:opacity-80">更新</a>
+                        <a href = "#" class = "bg-green-500 px-2 py-1 rounded-sm text-neutral-50 hover:opacity-90 active:opacity-80">刪除</a>
+                    </div>
+                @endif
             </div>
             @endforeach
         </div>
