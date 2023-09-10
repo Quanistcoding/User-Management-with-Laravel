@@ -39,10 +39,11 @@ class UserController extends Controller
         return view("dashboard",compact('users'));
     }
   
-    public function delete(string $id): View
-    {
-        $users = User::latest()->get();
-        return view("dashboard",compact('users'));
+    public function delete(string $id)
+    {   
+
+        User::findOrFail($id)->delete();
+        return redirect()->route('dashboard');
     }
 
 }

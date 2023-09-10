@@ -20,7 +20,7 @@
                 @if(Auth::user() && Auth::user()->role == "admin" || Auth::user()->id == $user->id)             
                     <div>
                         <a href = "{{ route('user.edit',$user->id ) }}" class = "bg-red-500 px-2 py-1 rounded-sm text-neutral-50 hover:opacity-90 active:opacity-80">更新</a>
-                        <a href = "#" class = "bg-green-500 px-2 py-1 rounded-sm text-neutral-50 hover:opacity-90 active:opacity-80">刪除</a>
+                        <a href = "{{ route('user.delete',$user->id ) }}" class = "bg-green-500 px-2 py-1 rounded-sm text-neutral-50 hover:opacity-90 active:opacity-80">刪除</a>
                     </div>
                 @endif
             </div>

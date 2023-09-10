@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 Route::controller(UserController::class)->group(function(){
     Route::get('/user/{id}', 'edit')->name('user.edit');
     Route::post('/user','update')->name('user.update');
-    Route::delete('/user/{id}','delete')->name('user.destroy');
+    Route::get('/user/delete/{id}','delete')->name('user.delete');
 
 });
 
