@@ -9,3 +9,4 @@ Follow the following commands to run this app:
 7. npm i 
 8. php artisan migrate
 9. php artisan serve
+10. npm run dev (in another ternimal or npm run build)
