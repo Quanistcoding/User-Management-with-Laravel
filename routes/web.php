@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/user/{id}', [UserController::class, 'show']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [UserController::class, 'showAll'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
