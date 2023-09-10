@@ -10,3 +10,5 @@ Follow the following commands to run this app:
 8. php artisan migrate
 9. php artisan serve
 10. npm run dev (in another ternimal or npm run build)
+
+The admin role needs to be added from databese from who ever has the right to access the database.

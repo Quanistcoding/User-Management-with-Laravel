@@ -15,7 +15,14 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/user/{id}', [UserController::class, 'show']);
+
+Route::controller(UserController::class)->group(function(){
+    Route::get('/user/{id}', 'edit')->name('user.edit');
+    Route::post('/user','update')->name('user.update');
+    Route::delete('/user/{id}','delete')->name('user.destroy');
+
+});
+
 
 
 Route::get('/', function () {
